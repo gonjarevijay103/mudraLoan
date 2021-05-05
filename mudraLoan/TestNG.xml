@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="mudraLoan" thread-count="1" parallel="tests">
+
+	<listeners>
+		<listener class-name="com.mudraLoan.utilities.Reporting" />
+	</listeners>
+
+
+	<test name="chrometest">
+		<parameter name="browser" value="chrome" />
+
+		<classes>
+			<class name="com.mudraLoan.testCases.TC001_FirstPage" />
+			<class name="com.mudraLoan.testCases.TC001_LoginMBNumber" />
+			<class name="com.mudraLoan.testCases.TC001_individualYes" />
+			<class name="com.mudraLoan.testCases.TC001_BasicCustomerDetails" />
+		</classes>
+
+
+	</test>
+
+	<!-- <test name="fftest"> <parameter name="browser" value="firefox" /> <classes> 
+		<class name="com.mudraLoan.testCases.TC001_FirstPage" /> </classes> </test> -->
+
+
+</suite>
