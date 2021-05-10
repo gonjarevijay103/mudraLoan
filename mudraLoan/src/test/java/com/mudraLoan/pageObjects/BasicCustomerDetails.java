@@ -1,5 +1,7 @@
 package com.mudraLoan.pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,86 +12,95 @@ import org.sikuli.api.robot.Key;
 public class BasicCustomerDetails {
 
 	WebDriver ldriver;
-	
 
 	public BasicCustomerDetails(WebDriver rdriver) {
 		ldriver = rdriver;
 		PageFactory.initElements(rdriver, this);
 	}
 
-	@FindBy(id = "mat-select-value-33")
+	@FindBy(xpath = "//span[@class='mat-select-placeholder ng-tns-c96-13 ng-star-inserted']")
 	WebElement salutationMr;
-	
-	
-	@FindBy(xpath = "//*[@id=\"mat-option-2297\"]/span")
+	//// *[@id="mat-option-7"]/span
+	//// *[@id="mat-option-8"]/span
+	//// *[@id="mat-select-value-7"]/span
+
+	@FindBy(xpath = "//span[@class='mat-option-text' and text()=' Mr ']")
 	WebElement selectMr;
-	
-	@FindBy(xpath = "//*[@id=\"mat-datepicker-2\"]/div")
+
+	@FindBy(xpath = "/html/body/div[2]/div[1]")
 	WebElement clickCalender;
-	
-	@FindBy(xpath = "//*[@id=\"mat-datepicker-2\"]/div/mat-month-view/table/tbody/tr[1]/td[2]/div[1]")
-	WebElement clickCalenderOneMay;
-	
-	
-	@FindBy(id = "mat-input-38")
+
+	// *[@id="mat-datepicker-0"]/mat-calendar-header/div/div/div
+
+	@FindBy(xpath = "/html/body/div[2]/div[1]")
+	List<WebElement> clickCalenderOneMay;
+	//// *[@id="mat-datepicker-0"]/div/mat-month-view/table/tbody/tr[2]/td[4]/div[1]
+
+	@FindBy(xpath = "//input[@placeholder='Enter Total Value of Assets owned']")
 	WebElement valueOfAssetsOwned;
 	
+	//
+
 	@FindBy(id = "mat-select-value-49")
 	WebElement residentStatus;
-	
-	@FindBy(id = "mat-input-47")
+
+	@FindBy(xpath = "//input[@placeholder='Enter Name of the Business Unit']")
 	WebElement nameOfBusinessUnit;
-	
-	@FindBy(xpath = "//*[@id=\"mat-select-value-37\"]/span")
+
+	@FindBy(xpath = "//span[@class='mat-select-placeholder ng-tns-c96-26 ng-star-inserted']")
 	WebElement msmeCategoryDD;
-	
-	
-	@FindBy(xpath = "//*[@id=\"mat-option-4577\"]/span")
+
+	@FindBy(xpath = "//span[text()=' Small ']")
 	WebElement msmeCategorySmall;
 	
-	@FindBy(id = "mat-select-value-39")
+	////*[@id="mat-option-2287"]/span
+	////*[@id="mat-option-2285"]/span
+
+	@FindBy(xpath = "//span[text()='Select Type of Activity']")
 	WebElement typeOfActivity;
-	
-	@FindBy(xpath = "//*[@id=\"mat-option-4579\"]/span")
+
+	@FindBy(xpath = "//span[text()=' Services ']")
 	WebElement typeOfActivityService;
-	
-	@FindBy(id = "mat-input-39")
+
+	@FindBy(xpath = "//input[@placeholder='Enter Details of Activity']")
 	WebElement enterDetailOfActivity;
-	
-	@FindBy(xpath = "//*[@id=\"mat-option-4959\"]/span")
+
+	@FindBy(xpath = "//span[text()=' Automobile Repairing- Painting ']")
 	WebElement enterDetailOfActivityCivilContractor;
-	
-	@FindBy(xpath = "//*[@id=\"mat-datepicker-3\"]/div/mat-month-view/table/tbody/tr[1]/td[1]")
+
+	@FindBy(xpath = "//input[@placeholder='Select Date of Incorporation']")
 	WebElement clickDateOfEncorporation;
 
-	@FindBy(xpath = "//*[@id=\"mat-datepicker-3\"]/div/mat-month-view/table/tbody/tr[1]/td[2]/div[1]")
+	
+	// /html/body/app-root/app-user-input/app-customer-details/div/form/div/div/div[2]/div[1]/mat-card[2]/mat-card-content[1]/div/div[5]/div/mat-form-field/div/div[1]/div[2]/mat-datepicker-toggle/button/span[1]/mat-icon/img
+	@FindBy(xpath = "//div[text()=' 1 ']")
 	WebElement clickDateOfEncorporationOneMay;
-	
-	@FindBy(id = "mat-input-41")
+
+	@FindBy(xpath = "//input[@placeholder='Enter Number of Employees']")
 	WebElement numberOfEmployee;
-	
-	@FindBy(id = "mat-input-42")
-	WebElement salesLastTwelveMonth;	
-	
-	@FindBy(id = "mat-input-43")
+
+	@FindBy(xpath = "//input[@placeholder='Enter Sales during last 12 months']")
+	WebElement salesLastTwelveMonth;
+
+	@FindBy(xpath = "//input[@placeholder='Enter Estimated sales for next 12 months']")
 	WebElement salesNextTwelveMonth;
-	
-	@FindBy(id = "mat-input-44")
+
+	@FindBy(xpath = "//input[@placeholder='Enter Address Line 1']")
 	WebElement busnAddLineOne;
-	
-	@FindBy(id = "mat-input-45")
+
+	@FindBy(xpath = "//input[@placeholder='Enter Address Line 2']")
 	WebElement busnAddLineTwo;
-	
-	@FindBy(id = "mat-input-46")
+
+	@FindBy(xpath = "//input[@placeholder='Enter Pincode']")
 	WebElement pinCode;
-	
-	@FindBy(id = "mat-select-value-31")
+
+	@FindBy(xpath = "//span[text()='Select Bank Branch']")
 	WebElement selectBankBranch;
-	
-	@FindBy(xpath = "//*[@id=\"mat-option-5082\"]/span")
+
+	@FindBy(xpath = "//span[text()=' DOMBIVLI-W ']")
 	WebElement domWest;
-	
-	@FindBy(xpath = "/html/body/app-root/app-user-input/app-customer-details/div/form/div/div/div[2]/div[2]/button")
+
+	@FindBy(xpath = "//button[@class='mat-focus-indicator primary-button mat-button mat-button-base']")
 	WebElement proceedButton;
 
 	public void clicksalutationMr() {
@@ -99,93 +110,99 @@ public class BasicCustomerDetails {
 	public void clickselectMr() {
 		selectMr.click();
 	}
-	
+
 	public void clickCalenderMethod() {
 		clickCalender.click();
 	}
-	
-	
+
 	public void clickCalenderOneMay() {
-		clickCalenderOneMay.click();
+		for (WebElement date : clickCalenderOneMay) {
+
+			if (date.getAttribute("class").contains("--today")) {
+
+				date.click();
+				break;
+
+			}
+		}
 	}
-	
+
 	public void valueOfAssetsOwned(String valOfAsst) {
 		valueOfAssetsOwned.sendKeys(String.valueOf(valOfAsst));
 	}
-	
+
 	public void nameOfUnit(String nameOfUnit) {
 		nameOfBusinessUnit.sendKeys(nameOfUnit);
 	}
-	
 
 	public void msmeCategoryDDMethod() {
 		msmeCategoryDD.click();
 	}
-	
+
 	public void msmeCategorySmallMethod() {
 		msmeCategorySmall.click();
 	}
-	
+
 	public void typeOfActivityMethod() {
 		typeOfActivity.click();
 	}
-	
+
 	public void typeOfActivityServiceMethod() {
 		typeOfActivityService.click();
 	}
-	
+
 	public void enterDetailOfActivityMethod() {
 		enterDetailOfActivity.click();
 	}
-	
+
 	public void enterDetailOfActivityCivilContractorMethod() {
 		enterDetailOfActivityCivilContractor.click();
 	}
-	
+
 	public void clickDateOfEncorporationMethod() {
 		clickDateOfEncorporation.click();
 	}
-	
+
 	public void clickDateOfEncorporationOneMayMethod() {
 		clickDateOfEncorporationOneMay.click();
 	}
-	
+
 	public void numberOfEmployeeMethod(String noOFEmp) {
 		numberOfEmployee.sendKeys(String.valueOf(noOFEmp));
 	}
-	
+
 	public void salesLastTwelveMonthMethod(String saleLTwelveMon) {
 		salesLastTwelveMonth.sendKeys(String.valueOf(saleLTwelveMon));
 	}
-	
+
 	public void salesNextTwelveMonthMethod(String saleNTwelveMon) {
 		salesNextTwelveMonth.sendKeys(String.valueOf(saleNTwelveMon));
 	}
-	
+
 	public void busnAddLineOneMethod(String busnAddOne) {
 		busnAddLineOne.sendKeys(busnAddOne);
 	}
-	
+
 	public void busnAddLineTwoMethod(String busnAddTwo) {
 		busnAddLineTwo.sendKeys(busnAddTwo);
 	}
-	
+
 	public void pinCodeMethod(String pin) throws InterruptedException {
 		pinCode.sendKeys(String.valueOf(pin));
 		pinCode.sendKeys(Key.TAB);
 		Thread.sleep(2000);
 	}
-	
+
 	public void selectBankBranchMethod() {
 		selectBankBranch.click();
 	}
-	
+
 	public void selectBankBranchDomWest() {
 		domWest.click();
 	}
-	
+
 	public void clickProceedBtn() {
 		proceedButton.click();
 	}
-	
+
 }
